@@ -1,54 +1,94 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.database.Cursor
+import android.database.sqlite.SQLiteDatabase
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.TextView
+import android.view.ContextMenu
+import android.view.MenuItem
+import android.view.View
+import android.widget.*
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.activity_compte2.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class compte : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compte2)
 
-        var Bplus = findViewById<ImageButton>(R.id.Bplus)
-        var Bmoin = findViewById<ImageButton>(R.id.Bmoin)
-        var plus = findViewById<TextView>(R.id.plus)
-        var moin = findViewById<TextView>(R.id.moin)
+        /* val fragments = ArrayList<Fragment>()
+        fragments.add(CustomFragment1())
+        fragments.add(CustomFragment2())
 
-
+        val viewPagerAdapter = SlidePageAdapter(fragments, supportFragmentManager)
+        vp_main.adapter = viewPagerAdapter*/
+        val Binfo = findViewById<ImageButton>(R.id.Binfo)
+        val Back = findViewById<ImageButton>(R.id.back)
+        val Bplus = findViewById<ImageButton>(R.id.Bplus)
+        val Bmoin = findViewById<ImageButton>(R.id.Bmoin)
+        val listD= findViewById<ImageButton>(R.id.listD)
+        val listA= findViewById<ImageButton>(R.id.listA)
         var argent = findViewById<TextView>(R.id.argent)
+        var argentA = findViewById<TextView>(R.id.argentA)
+        var argentD = findViewById<TextView>(R.id.argentD)
+        val npom = findViewById<TextView>(R.id.npom)
+
+
+
         val intent = this.intent
-        var npom = findViewById<TextView>(R.id.npom)
-        val nom1= intent.getStringExtra("nom")
-        var prenom1= intent.getStringExtra("prenom")
-        npom.text = nom1.toString() +" "+  prenom1.toString().toUpperCase()
-        var typem=intent.getStringExtra("typee")
-        var prixm= intent.getIntExtra("prixx",0)
-        var descriptivem =intent.getStringExtra("descriptivee")
+        var nom1 = intent.getStringExtra("nom")
+        var prenom1 = intent.getStringExtra("prenom")
+        var mail1 = intent.getStringExtra("mail")
+        if(npom.text == "")
+        {npom.text = nom1.toString().toLowerCase() +" "+ prenom1.toString().toUpperCase()}
+
+        //  val np = nom1.toString() + " " + prenom1.toString()
+        //  npom.text = np
 
 
-        Bplus.setOnClickListener{
-            var i2= Intent(this,ajouter::class.java)
-            startActivity(i2)
+
+      //  Binfo.setOnClickListener {
+
+     //       val i1 = Intent(this,info::class.java)
+     //       //  i2.putExtra("nom",np)
+      //      startActivity(i2)
+     //   }
+
+        Bplus.setOnClickListener {
+
+            val i2 = Intent(this,ajouter::class.java)
+            i2.putExtra("nom1",nom1)
+            i2.putExtra("prenom1",prenom1)
+                startActivity(i2)
         }
-        var dollar:Int ?=null
-        var typep =intent.getStringExtra("type")
-        var prixp = intent.getIntExtra("prix",0)
-        var descriptivep =intent.getStringExtra("descriptive")
-        Bmoin.setOnClickListener{
-            var i3= Intent(this,retire::class.java)
-            startActivity(i3)
+        Bmoin.setOnClickListener {
+
+            val i3 = Intent(this,retirer::class.java)
+            i3.putExtra("nom1",nom1)
+            i3.putExtra("prenom1",prenom1)
+                startActivity(i3)
+        }
+        listA.setOnClickListener {
+
+            val i4 = Intent(this,listeajouter::class.java)
+            i4.putExtra("nom1",nom1)
+            i4.putExtra("prenom1",prenom1)
+            startActivity(i4)
+        }
+        listD.setOnClickListener {
+
+            val i5 = Intent(this,listeretirer::class.java)
+            i5.putExtra("nom1",nom1)
+            i5.putExtra("prenom1",prenom1)
+            startActivity(i5)
+        }
+        back.setOnClickListener {
+
+            startActivity(Intent(this,MainActivity::class.java))
         }
 
 
-        dollar = (dollar?.plus(prixp)?.minus(prixm))
-        var d:Int?=null
-        d= d?.plus(prixp)
-        plus.text =  prixp.toString()
-        var dd:Int?=null
-        dd= dd?.plus(prixm)
-        moin.text =  dd.toString() +" $"
-        argent.text = dollar.toString() +" $"
-    }
-}
+    }}
+

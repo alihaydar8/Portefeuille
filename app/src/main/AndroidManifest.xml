@@ -9,18 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".retire"></activity>
-        <activity android:name=".rejeter" />
+        <activity android:name=".listeretirer"></activity>
+        <activity android:name=".listeajouter" />
+        <activity android:name=".retirer" />
+
         <activity android:name=".ajouter" />
         <activity android:name=".compte" />
-        <activity
-            android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/Theme.MyApplication.NoActionBar" />
-        <activity
-            android:name=".ScrollingActivity2"
-            android:label="@string/title_activity_scrolling2"
-            android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
