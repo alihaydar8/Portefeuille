@@ -16,7 +16,8 @@
             android:layout_width="32dp"
             android:layout_height="24dp"
             android:src="@drawable/arrawback"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/ImageUserI"
@@ -60,11 +61,10 @@
             android:layout_width="match_parent"
             android:layout_height="160dp"
             android:layout_marginLeft="20dp"
-
+            android:layout_marginTop="@dimen/p15"
             android:layout_marginRight="20dp"
             android:elevation="10dp"
             app:cardCornerRadius="10dp">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -196,7 +196,7 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="10dp"
+                        android:layout_height="15dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
@@ -271,9 +271,9 @@
                     android:id="@+id/piechart2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/p15"
+                    android:layout_marginTop="@dimen/p15"
+                    android:layout_marginBottom="@dimen/p15"
                     android:layout_weight="1"
                     android:padding="6dp"
 
@@ -282,7 +282,7 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="@dimen/p20"
                     android:layout_weight="1"
                     android:baselineAligned="false"
                     android:gravity="center_vertical"
@@ -295,7 +295,7 @@
 
 
                         <View
-                            android:layout_width="15dp"
+                            android:layout_width="@dimen/p15"
                             android:layout_height="match_parent"
                             android:background="@color/Other" />
 
@@ -309,13 +309,13 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="@dimen/p15"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
 
                         <View
-                            android:layout_width="15dp"
+                            android:layout_width="@dimen/p15"
                             android:layout_height="match_parent"
                             android:background="@color/Salary" />
 
@@ -329,12 +329,12 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="@dimen/p15"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
                         <View
-                            android:layout_width="15dp"
+                            android:layout_width="@dimen/p15"
                             android:layout_height="match_parent"
                             android:background="@color/Gift" />
 
@@ -348,12 +348,12 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="@dimen/p15"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
                         <View
-                            android:layout_width="15dp"
+                            android:layout_width="@dimen/p15"
                             android:layout_height="match_parent"
                             android:background="@color/Aide" />
 

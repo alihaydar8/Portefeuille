@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MY FIRST APPLICATION</string>
+    <string name="app_name">StatMoney</string>
     <string name="prenom">prenom</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
