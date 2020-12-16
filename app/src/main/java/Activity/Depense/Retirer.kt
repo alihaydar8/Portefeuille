@@ -1,6 +1,5 @@
 package Activity.Depense
 
-import Activity.Ajouter.listeajouter
 import Activity.Compte.*
 import Class.type
 import android.annotation.SuppressLint
@@ -15,13 +14,13 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import DataBase.MyDBHelper
 import com.example.myapplication.R
-
 import kotlinx.android.synthetic.main.activity_ajouter.*
+
 import kotlinx.android.synthetic.main.activity_retirer.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class retirer : AppCompatActivity() {
+class Retirer : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,17 +52,17 @@ class retirer : AppCompatActivity() {
         }
         monthD.text = SimpleDateFormat("dd/MMMM/YYYY hh:mm").format(Date())
 //Spinner Type Depense
-        val levelList: MutableList<type> = ArrayList()
-        levelList.add(type("Other"))
-        levelList.add(type("Food"))
-        levelList.add(type("House"))
-        levelList.add(type("Transport"))
-        levelList.add(type("Entertainment"))
-        levelList.add(type("Personnel"))
-        levelList.add(type("Health"))
+        val levelList1: MutableList<type> = ArrayList()
+        levelList1.add(type("Other"))
+        levelList1.add(type("Food"))
+        levelList1.add(type("House"))
+        levelList1.add(type("Transport"))
+        levelList1.add(type("Entertainment"))
+        levelList1.add(type("Personnel"))
+        levelList1.add(type("Health"))
 
         val adapter: ArrayAdapter<type> = ArrayAdapter<type>(
-                this, android.R.layout.simple_spinner_item, levelList
+                this, android.R.layout.simple_spinner_item, levelList1
         )
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         Type.setAdapter(adapter)
@@ -98,16 +97,16 @@ class retirer : AppCompatActivity() {
         var  rs1 = db1.rawQuery("SELECT * FROM DEPENSE ORDER BY DateD DESC ",null)
         Bretirer.setOnClickListener {
             if (!descriptive.text.toString().isNullOrEmpty() && !prix.text.toString().isNullOrEmpty()) {
-                var cv = ContentValues()
-                cv.put("TD", "type:" + type.selectedItem.toString())
-                cv.put("DD", descriptive.text.toString())
-                cv.put("PD",prix.text.toString().toInt())
+                var cv1 = ContentValues()
+                cv1.put("TD", type.selectedItem.toString())
+                cv1.put("DD", descriptive.text.toString())
+                cv1.put("PD",prix.text.toString().toInt())
                 if (date.text.toString().isNullOrEmpty())
-                { cv.put("DateD", SimpleDateFormat(" dd MMMM").format(Date()))}
+                { cv1.put("DateD", SimpleDateFormat(" dd MMMM").format(Date()))}
                 else{
-                    cv.put("DateD",date.text.toString())
+                    cv1.put("DateD",date.text.toString())
                 }
-                db1.insert("DEPENSE", null, cv)
+                db1.insert("DEPENSE", null, cv1)
 
                 rs1.requery()
                 var ad = AlertDialog.Builder(this)
@@ -117,7 +116,7 @@ class retirer : AppCompatActivity() {
                     prix.text = ""
                     descriptive.text = ""
                     date.text=""
-                    type.requestFocus()
+                    type.setSelection(0)
                 })
                 ad.show()
             }
@@ -167,7 +166,7 @@ class retirer : AppCompatActivity() {
                         editor.putString("updateDD", "")
                         editor.putString("updateDateD", "")
                         editor.apply()
-                        startActivity(Intent(this, listeretirer::class.java))
+                        startActivity(Intent(this, Listeretirer::class.java))
                     })
                     ad.show()
                 }

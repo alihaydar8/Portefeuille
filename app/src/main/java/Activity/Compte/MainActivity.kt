@@ -17,7 +17,7 @@ import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 ///////////////////////////J ai appris beaucoup pendant la realisation de cette application
-////////////////////////// surtout c etais ma premiere tentatife 
+////////////////////////// surtout c' etais ma premiere tentatife
 class MainActivity : AppCompatActivity() {
 
     lateinit var sharedPreferences:SharedPreferences
@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         sharedPreferences = getSharedPreferences("Share", Context.MODE_PRIVATE)
+        Toast.makeText(this, "Sign In if you already have account", Toast.LENGTH_SHORT).show()
         val Sex = findViewById<Spinner>(R.id.Sex)
         val nom = findViewById<TextView>(R.id.nom)
         val prenom = findViewById<TextView>(R.id.prenom)
@@ -114,7 +115,7 @@ class MainActivity : AppCompatActivity() {
                 }
  ////// cette  partie to be continue (pour cree une obtion )
             } else {
-                var oneaccount = AlertDialog.Builder(this)
+                val oneaccount = AlertDialog.Builder(this)
                 oneaccount.setTitle("only one account is possible")
                 oneaccount.setMessage("u have to delete the current account then u can create a new account or login in premium")
                 oneaccount.setPositiveButton("ok", null)

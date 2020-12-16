@@ -21,13 +21,14 @@
         <color name="Food">#66BB6A</color>
         <color name="House">#EF5350</color>
         <color name="Transport">#29B6F6</color>
-        <color name="Health">#67B93B64</color>
-        <color name = "Personel">#2CCCEFF6</color>
-        <color name="Entertainment">#365993</color>
+        <color name="Health">#800080</color>
+        <color name = "Personel">#808000</color>
+        <color name="Entertainment">#800000</color>
 
     <color name="Aide">#66BB6A</color>
     <color name="Gift">#EF5350</color>
     <color name="Salary">#29B6F6</color>
+    <color name="grey">#808080</color>
 
 
 </resources>

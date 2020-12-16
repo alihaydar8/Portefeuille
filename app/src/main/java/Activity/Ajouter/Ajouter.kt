@@ -14,13 +14,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import DataBase.MyDBHelper
 import com.example.myapplication.R
-import android.app.Activity
 import kotlinx.android.synthetic.main.activity_ajouter.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class ajouter : AppCompatActivity() {
+class Ajouter : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,13 +51,13 @@ class ajouter : AppCompatActivity() {
         }
         monthA.text = SimpleDateFormat("dd/MM/YYYY hh:mm").format(Date())
 //Spinner Type Ajouter
-        val levelList: MutableList<type> = ArrayList()
-        levelList.add(type("Other"))
-        levelList.add(type("Salary"))
-        levelList.add(type("Aide"))
-        levelList.add(type("Gift"))
+        val levelList2: MutableList<type> = ArrayList()
+        levelList2.add(type("Other"))
+        levelList2.add(type("Salary"))
+        levelList2.add(type("Aide"))
+        levelList2.add(type("Gift"))
 
-        val adapter: ArrayAdapter<type> = ArrayAdapter<type>(this, android.R.layout.simple_spinner_item, levelList)
+        val adapter: ArrayAdapter<type> = ArrayAdapter<type>(this, android.R.layout.simple_spinner_item, levelList2)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         ttypee.setAdapter(adapter)
         ttypee.onItemSelectedListener = object : android.widget.AdapterView.OnItemSelectedListener {
@@ -92,14 +91,14 @@ class ajouter : AppCompatActivity() {
         val  rs2 = db2.rawQuery("SELECT * FROM AJOUTER ORDER BY DateA DESC",null)
                 bajouter.setOnClickListener {
                     if (!descriptivee.text.toString().isNullOrEmpty() && !prixx.text.toString().isNullOrEmpty()) {
-                        val cv = ContentValues()
-                        cv.put("TA", typee.selectedItem.toString())
-                        cv.put("DA", descriptivee.text.toString())
-                        cv.put("PA", Integer.parseInt(prixx.text.toString()))
+                        val cv2 = ContentValues()
+                        cv2.put("TA", typee.selectedItem.toString())
+                        cv2.put("DA", descriptivee.text.toString())
+                        cv2.put("PA", Integer.parseInt(prixx.text.toString()))
                         if (datee.text.toString().isNullOrEmpty())
-                        {cv.put("DateA", SimpleDateFormat("dd MMMM").format(Date()))}
-                        else{cv.put("DateA",datee.text.toString())}
-                        db2.insert("AJOUTER", null, cv)
+                        {cv2.put("DateA", SimpleDateFormat("dd MMMM").format(Date()))}
+                        else{cv2.put("DateA",datee.text.toString())}
+                        db2.insert("AJOUTER", null, cv2)
 
                         rs2.requery()
                         val ad = AlertDialog.Builder(this)
@@ -154,7 +153,7 @@ class ajouter : AppCompatActivity() {
                         editor.putString("updateDA", "")
                         editor.putString("updateDateA", "")
                         editor.apply()
-                        startActivity(Intent(this,listeajouter::class.java))
+                        startActivity(Intent(this,Listeajouter::class.java))
                     })
                     ad.show()
                 }

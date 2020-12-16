@@ -14,14 +14,12 @@ import android.view.View
 import android.widget.*
 import DataBase.MyDBHelper
 import com.example.myapplication.R
-import android.content.ContentValues
-import kotlinx.android.synthetic.main.activity_ajouter.*
 import kotlinx.android.synthetic.main.activity_listeajouter.*
 
 import java.text.SimpleDateFormat
 import java.util.*
 
-class listeajouter : AppCompatActivity() {
+class Listeajouter : AppCompatActivity() {
     lateinit var db2: SQLiteDatabase
     lateinit var rs2: Cursor
     lateinit var adapter: SimpleCursorAdapter
@@ -115,7 +113,7 @@ class listeajouter : AppCompatActivity() {
             rs2.requery()
             adapter.notifyDataSetChanged()
             searchView2.queryHint = "Search Amond ${rs2.count} Record"
-            startActivity(Intent(this,ajouter::class.java))
+            startActivity(Intent(this,Ajouter::class.java))
         }
 
         return super.onContextItemSelected(item)

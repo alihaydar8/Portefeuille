@@ -1,10 +1,9 @@
 package Activity.Compte
- import com.example.myapplication.R
-import Activity.Ajouter.ajouter
-import Activity.Ajouter.listeajouter
- import Activity.Compte.*
- import Activity.Depense.listeretirer
-import Activity.Depense.retirer
+import com.example.myapplication.R
+ import Activity.Ajouter.Ajouter
+import Activity.Ajouter.Listeajouter
+ import Activity.Depense.Listeretirer
+import Activity.Depense.Retirer
 import DataBase.MyDBHelper
 import android.content.Context
 import android.content.DialogInterface
@@ -16,8 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
-import com.example.myapplication.*
-import java.text.SimpleDateFormat
+ import java.text.SimpleDateFormat
 import java.util.*
 
 class compte : AppCompatActivity() {
@@ -90,19 +88,19 @@ class compte : AppCompatActivity() {
         }
 // intent pour tous les autres activites
         Binfo.setOnClickListener {
-            startActivity(Intent(this, info::class.java))
+            startActivity(Intent(this, Info::class.java))
         }
         Bplus.setOnClickListener {
-                startActivity(Intent(this, ajouter::class.java))
+                startActivity(Intent(this, Ajouter::class.java))
         }
         Bmoin.setOnClickListener {
-                startActivity(Intent(this, retirer::class.java))
+                startActivity(Intent(this, Retirer::class.java))
         }
         listA.setOnClickListener {
-            startActivity(Intent(this, listeajouter::class.java))
+            startActivity(Intent(this, Listeajouter::class.java))
         }
         listD.setOnClickListener {
-            startActivity(Intent(this, listeretirer::class.java))
+            startActivity(Intent(this, Listeretirer::class.java))
         }
         back.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
@@ -111,7 +109,7 @@ class compte : AppCompatActivity() {
 ///DELETE TOUTS !!  ATTENTION
         signeout.setOnClickListener {
 
-            var bye = AlertDialog.Builder(this)
+            val bye = AlertDialog.Builder(this)
             bye.setTitle("Delete Account")
             bye.setMessage("if u delete ur account u will lose all the data")
             bye.setPositiveButton("ok", DialogInterface.OnClickListener{ _, _ ->

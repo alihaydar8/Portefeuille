@@ -5,17 +5,16 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
-import com.example.myapplication.R
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.R
 import kotlinx.android.synthetic.main.activity_info.*
-import kotlinx.android.synthetic.main.activity_retirer.*
 import org.eazegraph.lib.charts.PieChart
 import org.eazegraph.lib.models.PieModel
 
-class info : AppCompatActivity() {
+class Info : AppCompatActivity() {
 
     lateinit var db1: SQLiteDatabase
     lateinit var db2: SQLiteDatabase
@@ -31,7 +30,7 @@ class info : AppCompatActivity() {
         db1 = helper.writableDatabase
         db2 = helper.writableDatabase
         val pieChart1 = findViewById<PieChart>(R.id.piechart1)
-        val pieChart2 = findViewById<PieChart>(R.id.piechart1)
+        val pieChart2 = findViewById<PieChart>(R.id.piechart2)
 
         val Other1 = findViewById<TextView>(R.id.Other1)
         val Health = findViewById<TextView>(R.id.Health)
@@ -49,7 +48,6 @@ class info : AppCompatActivity() {
 
         n5.text = sharedPreferences.getString("nom","").toString().toLowerCase() +" "+ sharedPreferences.getString("prenom","").toString().toUpperCase()
         argentI.text = (sharedPreferences.getInt("countA",0) - sharedPreferences.getInt("countD",0)).toString() +".00 USD"
-
         if (sharedPreferences.getString("Sex","").toString() == "man")
         {
             ImageUserI.setImageResource(R.drawable.man)
@@ -69,7 +67,7 @@ class info : AppCompatActivity() {
         var CPersonel = 0
         var CFood = 0
         var CTransport = 0
-        if (rs1.moveToFirst()) {
+       if (rs1.moveToFirst()) {
             do {
                 if (rs1.getString(rs1.getColumnIndex("TD")).toString() == "Other") {
                     COther1 = COther1 + rs1.getString(rs1.getColumnIndex("PD")).toInt()
@@ -97,82 +95,113 @@ class info : AppCompatActivity() {
             while (rs1.moveToNext())
         }
 
+        var COther2 = 0
+        var CSalary = 0
+        var CAide = 0
+        var CGift = 0
+        if (rs2.moveToFirst()) {
+            do {
+                if (rs2.getString(rs2.getColumnIndex("TA")).toString() == "Other") {
+                    COther2 = COther2 + rs2.getString(rs2.getColumnIndex("PA")).toInt()
+                }
+                if (rs2.getString(rs2.getColumnIndex("TA")).toString() == "Salary") {
+                    CSalary = CSalary + rs2.getString(rs2.getColumnIndex("PA")).toInt()
+                }
+                if (rs2.getString(rs2.getColumnIndex("TA")).toString() == "Aide") {
+                    CAide = CAide + rs2.getString(rs2.getColumnIndex("PA")).toInt()
+                }
+                if (rs2.getString(rs2.getColumnIndex("TA")).toString() == "Gift") {
+                    CGift = CGift + rs2.getString(rs2.getColumnIndex("PA")).toInt()
+                }
+            }
+            while (rs2.moveToNext())
+        }
 
 
+        Other2.text = "Other: " + COther2.toString() +" .00 USD"
+        Salary.text ="Salary :"+ CSalary.toString()+" .00 USD"
+        Aide.text = "Aide :"+ CAide.toString()+" .00 USD"
+        Gift.text = "Gift :"+ CGift.toString()+" .00 USD"
 
-        Other2.text = "Other: "
-        Salary.text ="Salary"
-        Aide.text = "Aide"
-        Gift.text = "Gift"
+        Other1.text = "Other : " + COther1.toString() +" .00 USD"
+        Health.text = "Health : " + CHealth.toString() +" .00 USD"
+        House.text =  "House : " + CHouse.toString() +" .00 USD"
+        Entertainment.text = "Entertainment : " + CEntertainment.toString() +" .00 USD"
+        Personel.text = "Personel : " + CPersonel.toString() +" .00 USD"
+        Food.text = "Food : " + CFood.toString() +" .00 USD"
+        Transport.text = "transport : " + CTransport.toString() +" .00 USD"
 
-        Other1.text = "Other : " + COther1.toString() +" .00 EURO"
-        Health.text = "Health : " + CHealth.toString() +" .00 EURO"
-        House.text =  "House : " + CHouse.toString() +" .00 EURO"
-        Entertainment.text = "Entertainment : " + CEntertainment.toString() +" .00 EURO"
-        Personel.text = "Personel : " + CPersonel.toString() +" .00 EURO"
-        Food.text = "Food : " + CFood.toString() +" .00 EURO"
-        Transport.text = "transport : " + CTransport.toString() +" .00 EURO"
-
-
-
-if(sharedPreferences.getInt("countD",0) != 0) {
     pieChart1.addPieSlice(
         PieModel(
-            "Other", ((db1.rawQuery("SELECT SUM(PD) FROM DEPENSE WHERE TD = 'Other' ", null)
-                .getColumnIndex("PD") * 100) / sharedPreferences.getInt("countD", 0)).toFloat(),
+            "Other", COther1.toFloat(),
             Color.parseColor("#FFA726")
         )
     )
     pieChart1.addPieSlice(
         PieModel(
-            "Food", ((db1.rawQuery("SELECT SUM(PD) FROM DEPENSE WHERE TD = 'Food' ", null)
-                .getColumnIndex("PD") * 100) / sharedPreferences.getInt("countD", 0)).toFloat(),
+            "Food", CFood.toFloat(),
             Color.parseColor("#66BB6A")
         )
     )
     pieChart1.addPieSlice(
         PieModel(
-            "House", ((db1.rawQuery("SELECT SUM(PD) FROM DEPENSE WHERE TD = 'House' ", null)
-                .getColumnIndex("PD") * 100) / sharedPreferences.getInt("countD", 0)).toFloat(),
+            "House", CHouse.toFloat(),
             Color.parseColor("#EF5350")
         )
     )
     pieChart1.addPieSlice(
         PieModel(
-            "Transport", ((db1.rawQuery("SELECT SUM(PD) FROM DEPENSE WHERE TD = 'Transport' ", null)
-                .getColumnIndex("PD") * 100) / sharedPreferences.getInt("countD", 0)).toFloat(),
+            "Transport", CTransport.toFloat(),
             Color.parseColor("#29B6F6")
         )
     )
     pieChart1.addPieSlice(
         PieModel(
             "Entertainment",
-            ((db1.rawQuery("SELECT SUM(PD) FROM DEPENSE WHERE TD = 'Entertainment' ", null)
-                .getColumnIndex("PD") * 100) / sharedPreferences.getInt("countD", 0)).toFloat(),
-            Color.parseColor("#365993")
+                CEntertainment.toFloat(),
+            Color.parseColor("#800000")
         )
     )
     pieChart1.addPieSlice(
-        PieModel(
-            "Personnel", ((db1.rawQuery("SELECT SUM(PD) FROM DEPENSE WHERE TD = 'Personnel' ", null)
-                .getColumnIndex("PD") * 100) / sharedPreferences.getInt("countD", 0)).toFloat(),
-            Color.BLUE
+        PieModel("Personel",
+                CPersonel.toFloat(),
+            Color.parseColor("#808000")
         )
     )
     pieChart1.addPieSlice(
-        PieModel(
-            "Health", ((db1.rawQuery("SELECT SUM(PD) FROM DEPENSE WHERE TD = 'Health' ", null)
-                .getColumnIndex("PD") * 100) / sharedPreferences.getInt("countD", 0)).toFloat(),
-            Color.GRAY
+        PieModel("Health",
+                CHealth.toFloat(),
+            Color.parseColor("#800080")
         )
     )
 
     pieChart1!!.startAnimation()
-}
 
 
-
-
+        pieChart2.addPieSlice(
+                PieModel(
+                        "Other", COther2.toFloat(),
+                        Color.parseColor("#FFA726")
+                )
+        )
+        pieChart2.addPieSlice(
+                PieModel(
+                        "Salary", CSalary.toFloat(),
+                        Color.parseColor("#29B6F6")
+                )
+        )
+        pieChart2.addPieSlice(
+                PieModel(
+                        "Aide", CAide.toFloat(),
+                        Color.parseColor("#66BB6A")
+                )
+        )
+        pieChart2.addPieSlice(
+                PieModel(
+                        "Gift", CGift.toFloat(),
+                        Color.parseColor("#EF5350")
+                )
+        )
 
 
         pieChart2!!.startAnimation()

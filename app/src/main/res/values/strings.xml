@@ -115,4 +115,14 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_custom_fragment2">CustomFragment2</string>
     <string name="mail">i-mail</string>
+    <string name="etoile">*</string>
+    <string name="date_maintenant">date:maintenant</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="general">General</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="statistique">Statistique</string>
+    <string name="add_a_depence">Add a Depence</string>
+    <string name="add_money">Add Money</string>
+    <string name="spend_money_list">Spend Money List</string>
+    <string name="recived_money_list">Recived Money List</string>
 </resources>

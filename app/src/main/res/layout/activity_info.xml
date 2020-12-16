@@ -40,7 +40,6 @@
             android:padding="10dp">
             <TextView
                 android:id="@+id/argentI"
-                android:text="100"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -50,7 +49,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Current Balance"
+                android:text="@string/current_balance"
                 android:layout_gravity="center"
                 android:textColor="@color/white"/>
         </LinearLayout>
@@ -59,11 +58,10 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewGraph1"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="160dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="20dp"
 
+            android:layout_marginRight="20dp"
             android:elevation="10dp"
             app:cardCornerRadius="10dp">
 
@@ -72,16 +70,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="2">
-
+                android:weightSum="2"
+>
 
                 <org.eazegraph.lib.charts.PieChart
                     android:id="@+id/piechart1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/p15"
+                    android:layout_marginTop="@dimen/p15"
+                    android:layout_marginBottom="@dimen/p15"
                     android:layout_weight="1"
                     android:padding="6dp"
 
@@ -108,6 +106,7 @@
 
                         <TextView
                             android:id="@+id/Other1"
+                            android:textSize="10sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp" />
@@ -128,6 +127,7 @@
 
                         <TextView
                             android:id="@+id/Food"
+                            android:textSize="10sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp" />
@@ -147,6 +147,7 @@
 
                         <TextView
                             android:id="@+id/House"
+                            android:textSize="10sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp" />
@@ -155,36 +156,38 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="@dimen/p15"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
                         <View
-                            android:layout_width="15dp"
+                            android:layout_width="@dimen/p15"
                             android:layout_height="match_parent"
                             android:background="@color/Transport" />
 
                         <TextView
+                            android:id="@+id/Transport"
+                            android:textSize="10sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:id="@+id/Transport" />
+                            android:paddingLeft="10dp" />
 
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="@dimen/p15"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
 
                         <View
-                            android:layout_width="15dp"
+                            android:layout_width="@dimen/p15"
                             android:layout_height="match_parent"
                             android:background="@color/Entertainment" />
 
                         <TextView
                             android:id="@+id/Entertainment"
+                            android:textSize="10sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp" />
@@ -193,17 +196,18 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="10dp"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
                         <View
-                            android:layout_width="15dp"
+                            android:layout_width="@dimen/p15"
                             android:layout_height="match_parent"
                             android:background="@color/Health" />
 
                         <TextView
                             android:id="@+id/Health"
+                            android:textSize="10sp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp" />
@@ -212,18 +216,19 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="15dp"
+                        android:layout_height="@dimen/p15"
                         android:layout_gravity="center_vertical"
                         android:layout_marginTop="5dp">
 
                         <View
-                            android:layout_width="15dp"
+                            android:layout_width="@dimen/p15"
                             android:layout_height="match_parent"
                             android:background="@color/Personel" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:textSize="10sp"
                             android:paddingLeft="10dp"
                             android:id="@+id/Personel" />
 
@@ -240,16 +245,16 @@
             android:layout_below="@+id/cardViewGraph1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/p20"
+            android:textSize="15dp"
             android:text="Diagramme des depences selon les types" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewGraph2"
             android:layout_below="@+id/Diag1"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
+            android:layout_height="160dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
+
             android:layout_marginRight="20dp"
             android:elevation="10dp"
             app:cardCornerRadius="10dp">
@@ -370,8 +375,7 @@
             android:layout_below="@+id/cardViewGraph2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/p20"
+            android:textSize="15dp"
             android:text="Diagramme des depences selon les types" />
     </LinearLayout>
 </RelativeLayout>
-

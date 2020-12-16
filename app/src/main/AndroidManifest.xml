@@ -7,17 +7,17 @@
         android:allowBackup="true"
         android:icon="@drawable/ww"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ww"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity android:name="Activity.Compte.SignIn"></activity>
-        <activity android:name="Activity.Depense.listeretirer" />
-        <activity android:name="Activity.Ajouter.listeajouter" />
-        <activity android:name="Activity.Depense.retirer" />
-        <activity android:name="Activity.Ajouter.ajouter" />
+        <activity android:name="Activity.Depense.Listeretirer" />
+        <activity android:name="Activity.Ajouter.Listeajouter" />
+        <activity android:name="Activity.Depense.Retirer" />
+        <activity android:name="Activity.Ajouter.Ajouter" />
 
         <activity android:name="Activity.Compte.compte"/>
-        <activity android:name="Activity.Compte.info"/>
+        <activity android:name="Activity.Compte.Info"/>
         <activity android:name="Activity.Compte.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

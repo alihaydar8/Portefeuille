@@ -1,6 +1,5 @@
 package Activity.Depense
 
-import Activity.Ajouter.ajouter
 import Activity.Compte.compte
 
 import android.content.Context
@@ -22,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_listeretirer.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class listeretirer : AppCompatActivity() {
+class Listeretirer : AppCompatActivity() {
     lateinit var db1: SQLiteDatabase
     lateinit var rs1: Cursor
     lateinit var adapter: SimpleCursorAdapter
@@ -122,7 +121,7 @@ class listeretirer : AppCompatActivity() {
             rs1.requery()
             adapter.notifyDataSetChanged()
             searchView1.queryHint = "Search Amond ${rs1.count} Record"
-            startActivity(Intent(this, retirer::class.java))
+            startActivity(Intent(this, Retirer::class.java))
         }
         return super.onContextItemSelected(item)
 
