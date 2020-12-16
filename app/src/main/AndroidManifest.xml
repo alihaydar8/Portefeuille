@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ww"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
-        <activity android:name=".listeretirer"></activity>
-        <activity android:name=".listeajouter" />
-        <activity android:name=".retirer" />
+        <activity android:name="Activity.Compte.SignIn"></activity>
+        <activity android:name="Activity.Depense.listeretirer" />
+        <activity android:name="Activity.Ajouter.listeajouter" />
+        <activity android:name="Activity.Depense.retirer" />
+        <activity android:name="Activity.Ajouter.ajouter" />
 
-        <activity android:name=".ajouter" />
-        <activity android:name=".compte" />
-        <activity android:name=".MainActivity">
+        <activity android:name="Activity.Compte.compte"/>
+        <activity android:name="Activity.Compte.info"/>
+        <activity android:name="Activity.Compte.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

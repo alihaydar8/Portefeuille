@@ -1,129 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/container"
-android:scrollbarSize="@dimen/app_bar_height"
-android:background="@color/vert"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-    >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBarLayout2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/purple_700"
-        tools:ignore="MissingConstraints">
+        android:layout_margin="16dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/back2"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            android:padding="5dp"
+            android:src="@drawable/arrawback" />
+
+        <ImageView
+            android:id="@+id/ImageUserA"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/n1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:minHeight="?actionBarSize"
-            android:padding="@dimen/p16"
-            android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
-
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="30dp" />
+        <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:background="@color/purple_200"
+            android:padding="10dp">
+            <TextView
+                android:id="@+id/argentA"
+                android:text="100"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="18dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Balance"
+                android:layout_gravity="center"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/monthA"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/purple_700" />
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_gravity="end"
+            android:textColor="#808080"
+            android:textStyle="bold"
+            android:layout_marginRight="16dp"/>
 
-    <TextView
-        android:id="@+id/n1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/purple_500"
-        android:gravity="center"
-        android:padding="10dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appBarLayout2"
-        tools:ignore="MissingConstraints" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="435dp">
 
-    <EditText
-        android:id="@+id/typee"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="248dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/type"
-        android:inputType="textEmailAddress"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/etoilePA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="28dp"
+                android:text="*"
+                android:textColor="@color/red"
+                android:textSize="@dimen/p30"
+                app:layout_constraintEnd_toStartOf="@+id/prenom"
+                app:layout_constraintHorizontal_bias="0.761"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etoileDA"
+                tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/descriptivee"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/descriptive"
-        android:imeActionLabel="action_sign_in_short"
-        android:imeOptions="actionDone"
-        android:inputType="text"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/typee" />
+            <TextView
+                android:id="@+id/etoileDA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="120dp"
+                android:text="*"
+                android:textColor="@color/red"
+                android:textSize="@dimen/p30"
+                app:layout_constraintEnd_toStartOf="@+id/descriptivee"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/prixx"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="104dp"
-        android:layout_marginEnd="24dp"
-        android:hint="@string/prix"
-        android:imeActionLabel="action_sign_in_short"
-        android:imeOptions="actionDone"
-        android:inputType="number"
-        android:selectAllOnFocus="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/typee" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="type"
+                android:textColor="#808080"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/typee"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/Bajouter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="64dp"
-        android:text="@string/ajouter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/prixx"
-        app:layout_constraintVertical_bias="0.503" />
+            <Spinner
+                android:id="@+id/typee"
+                android:layout_width="197dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/style_spinner"
+                android:gravity="center_horizontal"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/back2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
-        android:text="back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/Bajouter"
-        app:layout_constraintStart_toStartOf="@+id/Bajouter"
-        tools:ignore="MissingConstraints" />
+            <EditText
+                android:id="@+id/descriptivee"
+                android:layout_width="289dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="44dp"
+                android:hint="@string/descriptive"
+                android:imeActionLabel="action_sign_in_short"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typee"
+                tools:ignore="MissingConstraints" />
 
+            <EditText
+                android:id="@+id/prixx"
+                android:layout_width="289dp"
+                android:layout_height="43dp"
+                android:hint="@string/prix"
+                android:imeActionLabel="action_sign_in_short"
+                android:inputType="number"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptivee"
+                app:layout_constraintVertical_bias="0.112" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <EditText
+                android:id="@+id/datee"
+                android:layout_width="289dp"
+                android:layout_height="43dp"
+                android:hint="date:maintenant"
+                android:imeActionLabel="action_sign_in_short"
+                android:imeOptions="actionDone"
+                android:inputType="time"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptivee"
+                app:layout_constraintVertical_bias="0.407" />
+
+            <Button
+                android:id="@+id/bajouter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="32dp"
+                android:text="@string/ajouter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/prixx"
+                app:layout_constraintVertical_bias="0.476" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</RelativeLayout>

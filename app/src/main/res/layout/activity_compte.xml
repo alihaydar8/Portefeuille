@@ -9,28 +9,38 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:orientation="vertical">
-
+        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            android:orientation="horizontal">
         <ImageButton
             android:id="@+id/back"
-            android:layout_width="32dp"
-            android:layout_height="24dp"
+            android:layout_width="57dp"
+            android:layout_height="50dp"
             android:padding="5dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/arrawback" />
+
+            <ImageButton
+                android:id="@+id/signeout"
+                android:layout_width="57dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/delet" />
+        </RelativeLayout>
 
         <ImageView
+            android:id="@+id/ImageUser"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
 
-            android:src="@drawable/ic_launcher_background" />
+            />
 
         <TextView
             android:id="@+id/npom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-
-            android:text="Ali haidar"
             android:textColor="@color/black"
             android:textSize="30dp" />
 
@@ -44,7 +54,6 @@
                 android:id="@+id/argent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1000.00 USD"
                 android:gravity="center"
                 android:textSize="18dp"
                 android:textColor="@color/white"
@@ -57,12 +66,12 @@
                 android:textColor="@color/white"/>
         </LinearLayout>
         <TextView
+            android:id="@+id/month"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:textColor="#808080"
             android:textStyle="bold"
-            android:text="this Month"
             android:layout_marginRight="16dp"/>
 
 
@@ -84,7 +93,6 @@
                     android:id="@+id/argentD"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="2000.00"
                     android:gravity="center"
                     android:textSize="18dp"
                     android:textColor="@color/black"
@@ -109,7 +117,6 @@
                     android:id="@+id/argentA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="1000.00"
                     android:gravity="center"
                     android:textSize="18dp"
                     android:textColor="@color/black"
@@ -169,12 +176,11 @@
                     android:id="@+id/Binfo"
                     android:layout_width="40dp"
                     android:layout_height="30dp"
-
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="0dp"
-                    android:src="@mipmap/entree" />
+                    android:src="@drawable/arrawforwar" />
 
             </RelativeLayout>
 
@@ -218,7 +224,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="0dp"
-                    android:src="@mipmap/entree" />
+                    android:src="@drawable/arrawforwar" />
 
             </RelativeLayout>
 
@@ -262,7 +268,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="0dp"
-                    android:src="@mipmap/entree" />
+                    android:src="@drawable/arrawforwar" />
 
             </RelativeLayout>
 
@@ -307,7 +313,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="2dp"
-                    android:src="@mipmap/entree" />
+                    android:src="@drawable/arrawforwar" />
 
             </RelativeLayout>
 
@@ -351,7 +357,7 @@
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="0dp"
-                    android:src="@mipmap/entree" />
+                    android:src="@drawable/arrawforwar" />
 
             </RelativeLayout>
 

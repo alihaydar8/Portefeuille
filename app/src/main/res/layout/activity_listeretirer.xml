@@ -15,22 +15,21 @@
             android:layout_width="22dp"
             android:layout_height="18dp"
             android:padding="5dp"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/arrawback" />
 
         <ImageView
+            android:id="@+id/ImageUserLD"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:id="@+id/n4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="AA"
             android:layout_gravity="center"
-
-            android:text="Ali haidar"
             android:textColor="@color/black"
             android:textSize="30dp" />
         <LinearLayout
@@ -40,10 +39,9 @@
             android:background="@color/purple_200"
             android:padding="10dp">
             <TextView
-                android:id="@+id/argent"
+                android:id="@+id/argentLD"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1000.00 USD"
                 android:gravity="center"
                 android:textSize="18dp"
                 android:textColor="@color/white"
@@ -56,16 +54,13 @@
                 android:textColor="@color/white"/>
         </LinearLayout>
         <TextView
+            android:id="@+id/monthLD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:textColor="#808080"
             android:textStyle="bold"
-            android:text="this Month"
             android:layout_marginRight="16dp"/>
-
-
-
 
         <SearchView
             android:id="@+id/searchView1"
