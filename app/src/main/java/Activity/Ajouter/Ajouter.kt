@@ -69,7 +69,7 @@ class Ajouter : AppCompatActivity() {
         }
 
 
-/// coucouc test
+
   //implementer une calendrier
         val cal2 = Calendar.getInstance()
         val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth  ->
